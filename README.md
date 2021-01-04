@@ -1,6 +1,6 @@
 ![title img](img/title.png)
 
-## Dots is a sleek, modern Minesweeper client, focused on high-scores and with cross-platform compatability
+## Dots is a sleek, modern Minesweeper app, focused on statistics and with cross-platform compatability
 
 ------
 
