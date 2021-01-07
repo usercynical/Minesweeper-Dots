@@ -6,7 +6,7 @@
 
 ## Features
 ### :blue_square: Sleek design
-### :baby_bottle: &nbsp; Easy to use*
+### &nbsp; :baby_bottle: Easy to use*
 ### :memo: Configurable
 ### :triangular_flag_on_post: Millisecond pb and average scores
 
