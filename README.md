@@ -5,17 +5,17 @@
 ------
 
 ## Features
-#### :blue_square: Sleek design
-#### :baby_bottle: Easy to use*
-#### :memo: Configurable
-#### :triangular_flag_on_post: Keeps track of statistics
+### :blue_square: Sleek design
+### :baby_bottle: Easy to use*
+### :memo: Configurable
+### :triangular_flag_on_post: Millisecond pb and average scores
 
 *\* Provided the user is familiar with Minesweeper and is literate.*
 
 ------
 
 ## About
-The project was born out of a personal "need" for a dedicated Minesweeper client which keeps track of statistics for different difficulties. During the development I decided
+The project was born out of a personal "need" for a dedicated Minesweeper client with millisecond scores as well as average scores. During the development I decided
 to also spice up (spice down?) the visuals a tad, simplifying things as much as possible. Because of the somewhat abstract representation of numbers, Dots is probably best suited for those who are familiar with the classic Minesweeper and its colors.
 
 #### Keybinds
@@ -37,18 +37,20 @@ The cells all have a simplified design, with squares of different colors replaci
 </p>
 
 ## Statistics
-Statistics are automatically loaded, updated, and saved during the lifetime of the program. The current high-and average score for each difficulty is displayed in the title bar, following the name of the difficulty.
+Statistics are automatically loaded, updated, and saved during the lifetime of the program. The current pb and average score for each difficulty is displayed in the title bar, following the name of the difficulty.
+
+Though the scores are displayed with two decimals of precision, the full float-value of the score is saved and compared against when checking for pb:s.
 
 ## Custom configuration
-Difficulties can be added and modified by changing the [config.json](src/config.json) file which contains data pertinent to each difficulty as well as the default difficulty to be loaded when the program starts. In modifying this file, you could change difficulty names, mine counts, grid sizes, high-scores (denoted as `record`), times played, and the average scores.
+Difficulties can be added and modified by changing the [config.json](src/config.json) file which contains data pertinent to each difficulty as well as the default difficulty to be loaded when the program starts.
 
-You could also add your own, custom difficulties by adding a json structure like the existing ones to the difficulty array. These can be accessed by pressing the **Number key** corresponding to the difficulties' index within the array, this unfortunately limits the total amount of difficulties to 9.
+You could also add your own, custom difficulties by adding a json structure like the existing ones to the difficulty array. These can be accessed by pressing the **Number key** corresponding to the difficulties' index within the array.
 
-Note that statistics such as the average or high-score don't have to be included upon first addition to the config file.
+The "stats"-property is automatically created when a difficulty is played, but one could include it manually.
 
 #### Example:
 
-Adding the following json data to the config file:
+Adding the following json data to the difficulty array in the config file:
 ```json
 {
     "mines": 5,
@@ -60,7 +62,7 @@ Adding the following json data to the config file:
 }
 ```
 
-and pressing the **Number key 4** would yield this result:
+and pressing the **Number key 4** when in-game would yield this result:
 
 <p align="center">
 <img src="img/custom_diff.png" width="55%">
