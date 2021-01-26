@@ -33,7 +33,12 @@ The cells all have a simplified design, with squares of different colors replaci
 ... and the UI is right where you left it, with flags remaining to the top left and the timer to the top right.
 
 <p align="center">
-<img src="img/ui.png" width="40%">
+<img src="img/ui.png" height="500px">
+<img src="img/pb.png" height="500px">
+</p>
+
+<p align="center">
+
 </p>
 
 ## :triangular_flag_on_post: Statistics
