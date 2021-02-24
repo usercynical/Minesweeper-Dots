@@ -12,36 +12,30 @@ static uint get_random(uint max)
 }
 
 template<typename T>
-T _abs(T arg)
-{
-	if (arg < 0)
-		return -arg;
-	return arg;
-}
-
-template<typename T>
 struct vec2_t
 {
 	T x, y;
 
 	static const vec2_t<T> ZERO;
 
+	template<typename A>
+	constexpr vec2_t(vec2_t<A> a) : x(a.x), y(a.y) {}
 	constexpr vec2_t(T x, T y) : x(x), y(y) {}
 	constexpr vec2_t() : vec2_t(0, 0) {}
 	constexpr vec2_t(T v) : vec2_t(v, v) {}
 
 	vec2_t<T> abs()
 	{
-		return { _abs(x), _abs(y) };
+		return { std::abs(x), std::abs(y) };
 	}
 
 	operator bool()
 	{
 		return x || y;
 	}
-
+	
 	template<typename A>
-	operator vec2_t<A>()
+	explicit operator vec2_t<A>()
 	{
 		return vec2_t<A>((A)x, (A)y);
 	}

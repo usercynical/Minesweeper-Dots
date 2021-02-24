@@ -75,7 +75,11 @@ void grid::move_mines(cell* clicked)
 			mine_pos.x = get_random(m_difficulty->size.x);
 			mine_pos.y = get_random(m_difficulty->size.y);
 			
-			delta = (clicked->pos() - mine_pos).abs();
+			delta = (vec2i(clicked->pos() - mine_pos)).abs();
+
+			if (delta.x < 0 || delta.y < 0)
+				int a = 5;
+
 			new_mine_cell = get_cell(mine_pos);
 		}
 		while (new_mine_cell->has(cell::DATA_MINE) || (delta.x <= 1 && delta.y <= 1));
